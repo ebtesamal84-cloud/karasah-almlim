@@ -1,0 +1,6 @@
+# ملفات نظام ويب ونظام تشغيل (لا حاجة لها في المستودع)
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+*.log
