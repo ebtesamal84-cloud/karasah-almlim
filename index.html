@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كراسة المعلم الليبي الرقمية – رياضيات المرحلة الإعدادية</title>
+<meta name="description" content="كراسة المعلم الليبي الرقمية لمادة الرياضيات للمرحلة الإعدادية: تحضير يومي، تخطيط، بنك أنشطة، ومتابعة التلاميذ.">
+<meta name="theme-color" content="#0B2545">
+
+<!-- خط عربي إضافي (اختياري): التطبيق يعمل بدون إنترنت أيضًا -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== الترويسة والتنقل ===================== -->
+<header class="app-header no-print">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">∑</span>
+    <span class="brand-text">
+      <strong>كراسة المعلم الليبي الرقمية</strong>
+      <small>رياضيات المرحلة الإعدادية</small>
+    </span>
+  </div>
+
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">☰&nbsp; القائمة</button>
+
+  <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+    <a href="#/home"       data-nav="home">الرئيسية</a>
+    <a href="#/basics"     data-nav="basics">البيانات الأساسية</a>
+    <a href="#/plans"      data-nav="plans">التخطيط</a>
+    <a href="#/prep"       data-nav="prep" class="is-highlight">التحضير اليومي</a>
+    <a href="#/activities" data-nav="activities">بنك الأنشطة</a>
+    <a href="#/assess"     data-nav="assess">التقويم والاختبارات</a>
+    <a href="#/students"   data-nav="students">متابعة التلاميذ</a>
+    <a href="#/diffs"      data-nav="diffs">الفروق الفردية</a>
+    <a href="#/notes"      data-nav="notes">الملاحظات</a>
+  </nav>
+</header>
+
+<main id="app" class="app-main">
+
+  <!-- ===================== الرئيسية ===================== -->
+  <section class="panel" id="sec-home" data-section="home">
+    <div class="hero">
+      <p class="hero-eyebrow">المرحلة الإعدادية · مادة الرياضيات</p>
+      <h2 class="hero-title">كراسة المعلم الليبي الرقمية</h2>
+      <p class="hero-sub">مكتبتك التعليمية لمادة <strong>الرياضيات</strong> في <strong>المرحلة الإعدادية</strong> — تحضير وتخطيط وتقويم في مكان واحد، بالعربية واتجاه من اليمين إلى اليسار.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#/prep">✍️ ابدأ تحضير درس اليوم</a>
+        <a class="btn btn-ghost" href="#/basics">إعداد بياناتي</a>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card"><span class="stat-num" id="statPreps">0</span><span class="stat-label">تحضير محفوظ</span></div>
+      <div class="stat-card"><span class="stat-num" id="statActivities">0</span><span class="stat-label">نشاط في البنك</span></div>
+      <div class="stat-card"><span class="stat-num" id="statYear">—</span><span class="stat-label">السنة الدراسية</span></div>
+      <div class="stat-card"><span class="stat-num" id="statStorage">—</span><span class="stat-label">مساحة مستخدمة</span></div>
+    </div>
+
+    <div class="grid-3" id="homeCards">
+      <a class="nav-card" href="#/basics"><span class="nav-card-ico">🪪</span><h3>البيانات الأساسية</h3><p>اسم المعلم والمدرسة والسنة الدراسية، وتُستخدم في رأس صفحة الطباعة.</p></a>
+      <a class="nav-card" href="#/plans"><span class="nav-card-ico">🗓️</span><h3>التخطيط السنوي والشهري والأسبوعي</h3><p>جدول الحصص الأسبوعي، ملاحظات كل شهر، وخطة الدروس السنوية.</p></a>
+      <a class="nav-card" href="#/prep"><span class="nav-card-ico">📝</span><h3>التحضير اليومي</h3><p>نموذج تحضير كامل: الأهداف، التمهيد، الوسائل، الاستراتيجيات، الخطوات، التقويم، الواجب.</p></a>
+      <a class="nav-card" href="#/activities"><span class="nav-card-ico">🧩</span><h3>بنك الأنشطة</h3><p>احفظ أنشطةك وألعابك الرياضية وأعِد استخدامها مع أي صف.</p></a>
+      <a class="nav-card" href="#/assess"><span class="nav-card-ico">📊</span><h3>التقويم والاختبارات</h3><p>بنك أسئلة قابل للبحث، وبناء اختبارات وطباعتها بدرجة كلية تلقائية.</p></a>
+      <a class="nav-card" href="#/students"><span class="nav-card-ico">👥</span><h3>متابعة التلاميذ</h3><p>قوائم الصفوف، وكشوف الدرجات مع حساب المعدل والطباعة.</p></a>
+      <a class="nav-card" href="#/diffs"><span class="nav-card-ico">🎯</span><h3>الفروق الفردية</h3><p>سجل لكل تلميذ: الحالة، الحاجة، خطة التدخّل، والمتابعة.</p></a>
+      <a class="nav-card" href="#/notes"><span class="nav-card-ico">🗒️</span><h3>الملاحظات</h3><p>ملاحظات يومية سريعة حول الصفوف والتأمل المهني.</p></a>
+    </div>
+
+    <div class="notice notice-warning">
+      <h4>⚠️ تنبيه مهم عن حفظ بياناتك (اقرأه مرة واحدة)</h4>
+      <p>كل ما تكتبه في هذا التطبيق يُحفظ <strong>محليًا داخل متصفحك على هذا الجهاز فقط</strong>. لا يوجد خادم ولا حساب مستخدم، ولا تُرسل بياناتك إلى أي جهة.</p>
+      <ul>
+        <li>إذا مسحت بيانات المتصفح، أو استخدمت متصفحًا أو جهازًا آخر، <strong>ستفقد التحضيرات</strong>.</li>
+        <li>هذه النسخة مخصّصة للاستخدام الفردي على جهاز واحد.</li>
+        <li><strong>حل الأمان:</strong> خذ نسخة احتياطية دوريًا من زر «تصدير نسخة احتياطية» في قسم <a href="#/basics">البيانات الأساسية</a>، واحفظ الملف على جهازك.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== البيانات الأساسية ===================== -->
+  <section class="panel hidden" id="sec-basics" data-section="basics">
+    <div class="section-head">
+      <h2>البيانات الأساسية</h2>
+      <p>تُملأ مرة واحدة، وتظهر تلقائيًا في رأس كل صفحة تحضير عند الطباعة.</p>
+    </div>
+
+    <form id="basicsForm" class="card form-grid" autocomplete="off">
+      <label>اسم المعلم/المعلمة
+        <input type="text" id="b_teacher" dir="auto" placeholder="مثال: محمد علي الصادق"></label>
+
+      <label>المدرسة / المركز التعليمي
+        <input type="text" id="b_school" dir="auto" placeholder="مثال: مدرسة النجاح الإعدادية"></label>
+
+      <label>السنة الدراسية
+        <input type="text" id="b_year" dir="auto" placeholder="مثال: 2025 / 2026"></label>
+
+      <label>المادة
+        <input type="text" id="b_subject" dir="auto" value="الرياضيات"></label>
+
+      <label>الصفوف/الشرائح التي أُدرّسها
+        <input type="text" id="b_classes" dir="auto" placeholder="مثال: 1 إعدادي – 2 إعدادي – 3 إعدادي"></label>
+
+      <label>بيانات إضافية (اختياري)
+        <input type="text" id="b_extra" dir="auto" placeholder="مثال: مشرف مادة الرياضيات / رقم الهاتف"></label>
+
+      <label class="span-2">ملاحظات عامة تظهر في التحضير
+        <textarea id="b_notes" rows="3" dir="auto" placeholder="أي ملاحظات تُكرّر في كل تحضير…"></textarea></label>
+
+      <div class="form-actions span-2">
+        <button type="submit" class="btn btn-navy">💾 حفظ البيانات الأساسية</button>
+        <button type="button" class="btn btn-ghost" id="basicsReset">تفريغ الحقول</button>
+        <span class="inline-ok" id="basicsOk" hidden>✓ تم الحفظ</span>
+      </div>
+    </form>
+
+    <div class="card">
+      <h3 class="card-title">🗂️ النسخ الاحتياطي والنقل</h3>
+      <p class="muted">لأن البيانات محفوظة في المتصفح فقط، صدّر نسخة احتياطية بين وقت وآخر، واحفظ الملف في مكان آمن (وشاقة، أو مجلداتك).</p>
+      <div class="form-actions">
+        <button class="btn btn-navy" id="exportBtn">⬇️ تصدير نسخة احتياطية (ملف JSON)</button>
+        <label class="btn btn-ghost file-btn">⬆️ استيراد نسخة احتياطية
+          <input type="file" id="importFile" accept="application/json,.json" hidden>
+        </label>
+      </div>
+      <p class="muted small">الاستيراد يستبدل البيانات الحالية ببيانات الملف، ويظهر تأكيد قبل التنفيذ.</p>
+    </div>
+
+    <div class="notice">
+      <h4>حدود الحفظ المحلي</h4>
+      <p>التخزين المحلي يتسع عادة لعدة مئات من التحضيرات النصية. إن امتلأ المتصفح، سيظهر لك تنبيه، وعندها صدّر نسخة احتياطية واحذف بعض التحضيرات القديمة.</p>
+    </div>
+  </section>
+
+  <!-- ===================== التخطيط ===================== -->
+  <section class="panel hidden" id="sec-plans" data-section="plans">
+    <div class="section-head">
+      <h2>التخطيط السنوي والشهري والأسبوعي</h2>
+      <p>ثلاث تبويبات: جدول الحصص الأسبوعي، ملاحظات كل شهر، وخطة دروس سنوية.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab is-active" data-plan-tab="week">التخطيط الأسبوعي</button>
+      <button type="button" class="tab" data-plan-tab="month">التخطيط الشهري</button>
+      <button type="button" class="tab" data-plan-tab="year">التخطيط السنوي</button>
+    </div>
+
+    <!-- أسبوعي -->
+    <div class="card tab-panel" id="plan-week">
+      <p class="muted">اكتب موضوع كل حصة في الخانة المناسبة، ثم اضغط حفظ.</p>
+      <div class="table-wrap">
+        <table class="grid-table" id="weekTable">
+          <thead>
+            <tr>
+              <th>اليوم</th>
+              <th>الحصة 1</th><th>الحصة 2</th><th>الحصة 3</th>
+              <th>الحصة 4</th><th>الحصة 5</th><th>الحصة 6</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-navy" id="weekSave">💾 حفظ الجدول الأسبوعي</button>
+        <span class="inline-ok" id="weekOk" hidden>✓ تم الحفظ</span>
+      </div>
+    </div>
+
+    <!-- شهري -->
+    <div class="card tab-panel hidden" id="plan-month">
+      <div class="row-gap">
+        <label>الشهر
+          <select id="monthSelect"></select>
+        </label>
+        <button type="button" class="btn btn-navy" id="monthSave">💾 حفظ ملاحظات الشهر</button>
+        <span class="inline-ok" id="monthOk" hidden>✓ تم الحفظ</span>
+      </div>
+      <label>موضوعات الشهر ومناسباته (نقاط، دروس، مراجعات، اختبارات)
+        <textarea id="monthText" rows="10" dir="auto" placeholder="مثال:&#10;- مراجعة الأعداد النسبية&#10;- اختبار منتصف الفصل&#10;- أسبوع التقويم…"></textarea>
+      </label>
+    </div>
+
+    <!-- سنوي -->
+    <div class="card tab-panel hidden" id="plan-year">
+      <form id="yearForm" class="form-grid compact" autocomplete="off">
+        <label>الدرس / الوحدة
+          <input type="text" id="y_title" dir="auto" placeholder="مثال: الكسور العشرية" required></label>
+        <label>الشهر
+          <select id="y_month"></select></label>
+        <label>الحصة رقم
+          <input type="number" id="y_week" min="1" max="40" placeholder="1"></label>
+        <label>الحالة
+          <select id="y_status">
+            <option>مخطط له</option><option>تم تنفيذه</option><option>مراجعة</option><option>مؤجل</option>
+          </select></label>
+        <div class="form-actions span-2">
+          <button type="submit" class="btn btn-navy">＋ إضافة إلى الخطة السنوية</button>
+        </div>
+      </form>
+      <input type="search" id="yearSearch" class="search-input" dir="auto" placeholder="🔎 ابحث في الخطة السنوية…">
+      <div class="list" id="yearList"></div>
+    </div>
+  </section>
+
+  <!-- ===================== التحضير اليومي ===================== -->
+  <section class="panel hidden" id="sec-prep" data-section="prep">
+    <div class="section-head">
+      <h2>التحضير اليومي</h2>
+      <p>املأ النموذج ثم احفظه. يمكنك لاحقًا تعديله أو حذفه أو طباعته على ورق A4.</p>
+    </div>
+
+    <div class="toolbar no-print">
+      <input type="search" id="prepSearch" class="search-input" dir="auto" placeholder="🔎 ابحث بالعنوان أو الصف أو التاريخ…">
+      <button type="button" class="btn btn-gold" id="prepNew">＋ تحضير جديد</button>
+    </div>
+
+    <form id="prepForm" class="card form-grid" autocomplete="off">
+      <input type="hidden" id="p_id">
+
+      <label>الصف
+        <input type="text" id="p_class" list="classesList" dir="auto" required placeholder="مثال: 2 إعدادي / شعبة ب">
+        <datalist id="classesList">
+          <option value="1 إعدادي"><option value="2 إعدادي"><option value="3 إعدادي">
+        </datalist>
+      </label>
+
+      <label>التاريخ
+        <input type="date" id="p_date" required></label>
+
+      <label>رقم الحصة / الفترة
+        <input type="text" id="p_period" dir="auto" placeholder="مثال: الحصة الأولى"></label>
+
+      <label>عنوان الدرس
+        <input type="text" id="p_title" dir="auto" required placeholder="مثال: ضرب الكسور العشرية"></label>
+
+      <label class="span-2">الأهداف المعرفية <small class="hint">(أن يعرف… يُدرك…)</small>
+        <textarea id="p_know" rows="3" dir="auto" placeholder="- أن يضرب كسرًا عشريًا في عدد طبيعي"></textarea></label>
+
+      <label class="span-2">الأهداف المهارية <small class="hint">(أن يُجري… يحل… يستخدم…)</small>
+        <textarea id="p_skill" rows="3" dir="auto" placeholder="- أن يحل مسائل ضرب من واقع الحياة"></textarea></label>
+
+      <label class="span-2">الأهداف الوجدانية <small class="hint">(أن يقدّر… يتعاون… يُبدي اهتمامًا…)</small>
+        <textarea id="p_att" rows="3" dir="auto" placeholder="- أن يُقدّر أهمية الرياضيات في الحياة اليومية"></textarea></label>
+
+      <label>التمهيد
+        <textarea id="p_warm" rows="4" dir="auto" placeholder="نشاط إثارة/مراجعة سابقة تُهيّئ للدرس…"></textarea></label>
+
+      <label>الوسائل والأدوات
+        <textarea id="p_tools" rows="4" dir="auto" placeholder="السبورة، الألواح، جدول الكسور، بطاقات، آلة حاسبة…"></textarea></label>
+
+      <fieldset class="span-2 span-field">
+        <legend>استراتيجيات التدريس</legend>
+        <div class="chips" id="strategiesBox">
+          <label class="chip"><input type="checkbox" name="p_strategy" value="الشرح المباشر">الشرح المباشر</label>
+          <label class="chip"><input type="checkbox" name="p_strategy" value="التعلم التعاوني">التعلم التعاوني</label>
+          <label class="chip"><input type="checkbox" name="p_strategy" value="حل المشكلات">حل المشكلات</label>
+          <label class="chip"><input type="checkbox" name="p_strategy" value="التعلم بالاكتشاف">التعلم بالاكتشاف</label>
+          <label class="chip"><input type="checkbox" name="p_strategy" value="العصف الذهني">العصف الذهني</label>
+          <label class="chip"><input type="checkbox" name="p_strategy" value="رحلة الاستقصاء">رحلة الاستقصاء</label>
+          <label class="chip"><input type="checkbox" name="p_strategy" value="التعلم باللعب">التعلم باللعب</label>
+          <label class="chip"><input type="checkbox" name="p_strategy" value="الفكرة نصف العمل">الفكرة نصف العمل</label>
+          <label class="chip"><input type="checkbox" name="p_strategy" value="التعلم بالاكتشاف الموجه">التعلم بالاكتشاف الموجه</label>
+        </div>
+      </fieldset>
+
+      <div class="span-2">
+        <div class="row-head">
+          <h4>خطوات الدرس</h4>
+          <button type="button" class="btn btn-soft" id="addStep">＋ إضافة خطوة</button>
+        </div>
+        <div class="steps-box" id="prepSteps"></div>
+      </div>
+
+      <label>التقويم
+        <textarea id="p_eval" rows="4" dir="auto" placeholder="كيف أتأكد من تحقق الأهداف؟ أسئلة شفوية، تقويم صفّي…"></textarea></label>
+
+      <label>نوع التقويم
+        <select id="p_evalKind">
+          <option>تقويم تكويني (أثناء التعلم)</option>
+          <option>تقويم ختامي (بعد التعلم)</option>
+          <option>تقويم تشخيصي (قبل التعلم)</option>
+          <option>تقويم عزل الفجوة</option>
+        </select>
+      </label>
+
+      <label>الواجب المنزلي
+        <textarea id="p_homework" rows="4" dir="auto" placeholder="التمرين رقم… صفحة…"></textarea></label>
+
+      <label>ملاحظات معلّقة (اختياري)
+        <textarea id="p_notes" rows="4" dir="auto" placeholder="تعثّر تلميذ معين، حاجز، تحسين مقترح للدرس القادم…"></textarea></label>
+
+      <div class="form-actions span-2">
+        <button type="submit" class="btn btn-gold" id="prepSave">💾 حفظ التحضير</button>
+        <button type="button" class="btn btn-navy" id="prepPrint">🖨️ طباعة (A4)</button>
+        <button type="button" class="btn btn-ghost" id="prepReset">تفريغ النموذج</button>
+        <span class="inline-ok" id="prepOk" hidden>✓ تم الحفظ</span>
+      </div>
+    </form>
+
+    <div class="list-head">
+      <h3>التحضيرات المحفوظة</h3>
+      <span class="badge" id="prepCount">0</span>
+    </div>
+    <div class="list" id="prepList"></div>
+  </section>
+
+  <!-- ===================== بنك الأنشطة ===================== -->
+  <section class="panel hidden" id="sec-activities" data-section="activities">
+    <div class="section-head">
+      <h2>بنك الأنشطة</h2>
+      <p>سجّل نشاطًا مرة واحدة، ثم أعد استخدامه مع أي صف.</p>
+    </div>
+    <div class="toolbar no-print">
+      <input type="search" id="actSearch" class="search-input" dir="auto" placeholder="🔎 ابحث في الأنشطة…">
+      <button type="button" class="btn btn-gold" id="actToggle">＋ نشاط جديد</button>
+    </div>
+    <form id="actForm" class="card form-grid hidden" autocomplete="off">
+      <input type="hidden" id="a_id">
+      <label>اسم النشاط
+        <input type="text" id="a_title" dir="auto" required placeholder="مثال: سباق جمع الكسور"></label>
+      <label>الصف / المجموعة
+        <input type="text" id="a_class" dir="auto" placeholder="مثال: 1 إعدادي"></label>
+      <label>الزمن المتوقع
+        <input type="text" id="a_time" dir="auto" placeholder="مثال: 15 دقيقة"></label>
+      <label>الوسائل المطلوبة
+        <input type="text" id="a_tools" dir="auto" placeholder="بطاقات، أوراق، مقص…"></label>
+      <label class="span-2">وصف النشاط وكيفية تنفيذه
+        <textarea id="a_desc" rows="4" dir="auto" placeholder="الخطوات، التوزيع داخل الصف، قواعد اللعبة…"></textarea></label>
+      <div class="form-actions span-2">
+        <button type="submit" class="btn btn-gold">💾 حفظ النشاط</button>
+        <button type="button" class="btn btn-ghost" id="actCancel">إلغاء</button>
+      </div>
+    </form>
+    <div class="list" id="actList"></div>
+  </section>
+
+  <!-- ===================== الملاحظات ===================== -->
+  <section class="panel hidden" id="sec-notes" data-section="notes">
+    <div class="section-head">
+      <h2>الملاحظات</h2>
+      <p>ملاحظات يومية سريعة حول التلاميذ والصفوف والتأمل المهني.</p>
+    </div>
+    <div class="toolbar no-print">
+      <input type="search" id="noteSearch" class="search-input" dir="auto" placeholder="🔎 ابحث في الملاحظات…">
+      <button type="button" class="btn btn-gold" id="noteToggle">＋ ملاحظة جديدة</button>
+    </div>
+    <form id="noteForm" class="card form-grid hidden" autocomplete="off">
+      <input type="hidden" id="n_id">
+      <label>الموضوع
+        <input type="text" id="n_title" dir="auto" required placeholder="مثال: ضعف الأساس في الجمع"></label>
+      <label>التصنيف
+        <select id="n_kind">
+          <option>ملاحظة صفية</option><option>ملاحظة عن تلميذ</option>
+          <option>تأمل مهني</option><option>مهام إدارية</option>
+        </select></label>
+      <label>الصف
+        <input type="text" id="n_class" dir="auto" placeholder="مثال: 3 إعدادي"></label>
+      <label class="span-2">النص
+        <textarea id="n_body" rows="4" dir="auto" placeholder="اكتب ملاحظتك…"></textarea></label>
+      <div class="form-actions span-2">
+        <button type="submit" class="btn btn-gold">💾 حفظ الملاحظة</button>
+        <button type="button" class="btn btn-ghost" id="noteCancel">إلغاء</button>
+      </div>
+    </form>
+    <div class="list" id="noteList"></div>
+  </section>
+
+  <!-- ===================== التقويم والاختبارات ===================== -->
+  <section class="panel hidden" id="sec-assess" data-section="assess">
+    <div class="section-head">
+      <h2>التقويم والاختبارات</h2>
+      <p>بنك أسئلة قابل للبحث، وبناء اختبار ثم طباعته على ورق A4.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab is-active" data-exam-tab="bank">بنك الأسئلة</button>
+      <button type="button" class="tab" data-exam-tab="builder">بناء اختبار</button>
+      <button type="button" class="tab" data-exam-tab="exams">اختباراتي</button>
+    </div>
+
+    <!-- بنك الأسئلة -->
+    <div class="card tab-panel" id="exm-bank">
+      <div class="toolbar no-print">
+        <input type="search" id="qSearch" class="search-input" dir="auto" placeholder="🔎 ابحث في نص السؤال أو الصف أو الدرس…">
+        <button type="button" class="btn btn-gold" id="qToggle">＋ سؤال جديد</button>
+      </div>
+
+      <form id="qForm" class="form-grid hidden" autocomplete="off">
+        <input type="hidden" id="q_id">
+        <label class="span-2">نص السؤال
+          <textarea id="q_text" rows="3" dir="auto" required placeholder="مثال: احسب ناتج 0.25 × 40 ثم اكتب الناتج بالأجزاء من المئة"></textarea></label>
+
+        <label>نوع السؤال
+          <select id="q_type">
+            <option>مقالي</option>
+            <option>اختيار من متعدد</option>
+            <option>صواب وخطأ</option>
+            <option>إكمال الفراغ</option>
+          </select></label>
+
+        <label>الدرجة
+          <input type="number" id="q_marks" min="0.5" step="0.5" value="1"></label>
+
+        <label>الصف
+          <input type="text" id="q_class" list="classesList" dir="auto" placeholder="2 إعدادي"></label>
+
+        <label>الوحدة / الدرس
+          <input type="text" id="q_lesson" dir="auto" placeholder="الكسور العشرية"></label>
+
+        <label>مستوى الصعوبة
+          <select id="q_level"><option>سهل</option><option>متوسط</option><option>صعب</option></select></label>
+
+        <label>الإجابة النموذجية
+          <textarea id="q_answer" rows="2" dir="auto" placeholder="الإجابة الصحيحة / نموذج الإجابة"></textarea></label>
+
+        <label class="span-2">الخيارات (سطر لكل خيار — للاختيار من متعدد)
+          <textarea id="q_options" rows="4" dir="auto" placeholder="أ) 4&#10;ب) 0.4&#10;ج) 40&#10;د) 4"></textarea></label>
+
+        <div class="form-actions span-2">
+          <button type="submit" class="btn btn-gold">💾 حفظ السؤال</button>
+          <button type="button" class="btn btn-ghost" id="qCancel">إلغاء</button>
+        </div>
+      </form>
+
+      <div class="list" id="qList"></div>
+    </div>
+
+    <!-- بناء اختبار -->
+    <div class="card tab-panel hidden" id="exm-builder">
+      <form class="form-grid compact" id="examMeta" autocomplete="off">
+        <label>عنوان الاختبار
+          <input type="text" id="e_title" dir="auto" placeholder="اختبار الوحدة الأولى"></label>
+        <label>الصف
+          <input type="text" id="e_class" list="classesList" dir="auto" placeholder="2 إعدادي"></label>
+        <label>التاريخ
+          <input type="date" id="e_date"></label>
+        <label>المدة (دقيقة)
+          <input type="number" id="e_duration" min="5" step="5" value="45"></label>
+        <label class="span-2">تعليمات عامة تظهر أعلى ورقة الاختبار
+          <textarea id="e_instructions" rows="2" dir="auto" placeholder="أجب في الكراسة، واكتب اسمك وشيعتك، وراجع إجاباتك…"></textarea></label>
+      </form>
+
+      <div class="row-head">
+        <h4>أسئلة الاختبار
+          <span class="badge" id="e_count">0 سؤال</span>
+          <span class="badge badge-soft" id="e_total">0 درجة</span>
+        </h4>
+        <div class="form-actions">
+          <button type="button" class="btn btn-soft" id="e_clear">تفريغ الاختبار</button>
+          <button type="button" class="btn btn-navy" id="e_save">💾 حفظ الاختبار</button>
+          <button type="button" class="btn btn-gold" id="e_print">🖨️ طباعة (A4)</button>
+        </div>
+      </div>
+
+      <p class="muted small">أضِف الأسئلة من تبويب «بنك الأسئلة» عبر زر «＋ إضافة للاختبار».</p>
+      <div class="list" id="e_list"></div>
+    </div>
+
+    <!-- اختباراتي -->
+    <div class="card tab-panel hidden" id="exm-exams">
+      <input type="search" id="exmSearch" class="search-input" dir="auto" placeholder="🔎 ابحث في اختباراتي…">
+      <div class="list" id="exmList"></div>
+    </div>
+  </section>
+
+  <!-- ===================== متابعة التلاميذ ===================== -->
+  <section class="panel hidden" id="sec-students" data-section="students">
+    <div class="section-head">
+      <h2>متابعة التلاميذ</h2>
+      <p>قوائم الصفوف، والدرجات مع حساب المعدل تلقائيًا وطباعة الكشف.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button type="button" class="tab is-active" data-stu-tab="list">التلاميذ</button>
+      <button type="button" class="tab" data-stu-tab="grades">الدرجات</button>
+    </div>
+
+    <!-- قوائم التلاميذ -->
+    <div class="card tab-panel" id="stu-list">
+      <div class="toolbar no-print">
+        <input type="search" id="stuSearch" class="search-input" dir="auto" placeholder="🔎 ابحث باسم التلميذ أو الصف…">
+        <button type="button" class="btn btn-gold" id="stuToggle">＋ تلميذ جديد</button>
+      </div>
+
+      <form id="stuForm" class="form-grid hidden" autocomplete="off">
+        <input type="hidden" id="s_id">
+        <label>اسم التلميذ
+          <input type="text" id="s_name" dir="auto" required placeholder="الاسم الثلاثي"></label>
+        <label>الصف
+          <input type="text" id="s_class" list="classesList" dir="auto" required placeholder="2 إعدادي"></label>
+        <label>الشعبة (اختياري)
+          <input type="text" id="s_section" dir="auto" placeholder="ب"></label>
+        <label>ملاحظات
+          <input type="text" id="s_notes" dir="auto" placeholder="حضور، سلوك، احتياجات…"></label>
+        <div class="form-actions span-2">
+          <button type="submit" class="btn btn-gold">💾 حفظ التلميذ</button>
+          <button type="button" class="btn btn-ghost" id="stuCancel">إلغاء</button>
+        </div>
+      </form>
+
+      <p class="muted small" id="stuSummary">عدد التلاميذ: 0</p>
+      <div class="list" id="stuList"></div>
+    </div>
+
+    <!-- الدرجات -->
+    <div class="card tab-panel hidden" id="stu-grades">
+      <div class="row-gap">
+        <label>الصف
+          <input type="text" id="g_class" list="classesList" dir="auto" placeholder="2 إعدادي"></label>
+        <label>اسم التحصيل / الاختبار
+          <input type="text" id="g_test" dir="auto" placeholder="اختبار الوحدة الأولى"></label>
+        <button type="button" class="btn btn-navy" id="g_load">عرض الكشف</button>
+        <button type="button" class="btn btn-gold" id="g_save">💾 حفظ الدرجات</button>
+        <button type="button" class="btn btn-soft" id="g_print">🖨️ طباعة الكشف</button>
+        <button type="button" class="btn btn-navy" id="g_xlsx">⬇️ تصدير الكشف (Excel)</button>
+        <button type="button" class="btn btn-ghost" id="g_xlsx_all">⬇️ تصدير كل الكشوف (Excel)</button>
+      </div>
+
+      <div class="table-wrap" id="gradeWrap"></div>
+      <div class="stat-row" id="grStats" hidden>
+        <div class="stat-card"><span class="stat-num" id="grCount">0</span><span class="stat-label">عدد التلاميذ</span></div>
+        <div class="stat-card"><span class="stat-num" id="grAvg">0</span><span class="stat-label">المعدل</span></div>
+        <div class="stat-card"><span class="stat-num" id="grMax">0</span><span class="stat-label">أعلى درجة</span></div>
+        <div class="stat-card"><span class="stat-num" id="grMin">0</span><span class="stat-label">أدنى درجة</span></div>
+      </div>
+
+      <p class="muted small">يُحفظ الكشف برقم (الصف + اسم التحصيل). عيّن الصف واسم التحصيل ثم اضغط «عرض الكشف» لتحميل بيانات سابقة أو بدء كشف جديد.</p>
+    </div>
+  </section>
+
+  <!-- ===================== الفروق الفردية ===================== -->
+  <section class="panel hidden" id="sec-diffs" data-section="diffs">
+    <div class="section-head">
+      <h2>الفروق الفردية</h2>
+      <p>سجل لكل تلميذ يحتاج تدخّلًا: الحالة، الحاجة، خطة التدخّل، والمتابعة.</p>
+    </div>
+
+    <div class="toolbar no-print">
+      <input type="search" id="diffSearch" class="search-input" dir="auto" placeholder="🔎 ابحث باسم التلميذ أو نوع الحالة…">
+      <button type="button" class="btn btn-gold" id="diffToggle">＋ سجل جديد</button>
+    </div>
+
+    <form id="diffForm" class="card form-grid hidden" autocomplete="off">
+      <input type="hidden" id="d_id">
+      <label>التلميذ
+        <input type="text" id="d_student" list="studentsList" dir="auto" required placeholder="اسم التلميذ"></label>
+      <label>الصف
+        <input type="text" id="d_class" list="classesList" dir="auto" placeholder="2 إعدادي"></label>
+      <label>نوع الحالة
+        <select id="d_kind">
+          <option>متفوق</option>
+          <option>موهوب</option>
+          <option>متعثر في التعلم</option>
+          <option>ضعيف الأساس</option>
+          <option>صعوبة لغوية</option>
+          <option>انتباه / نشاط زائد</option>
+          <option>حاجة خاصة أخرى</option>
+        </select></label>
+      <label>حالة المتابعة
+        <select id="d_status">
+          <option>قيد التنفيذ</option><option>منجز</option><option>تحتاج مراجعة</option>
+        </select></label>
+      <label class="span-2">الملاحظة / الحاجة
+        <textarea id="d_need" rows="3" dir="auto" placeholder="ما الذي يُلاحَظ لدى التلميذ؟"></textarea></label>
+      <label class="span-2">خطة التدخّل
+        <textarea id="d_plan" rows="3" dir="auto" placeholder="إجراءات محددة قابلة للتنفيذ خلال أسبوعين…"></textarea></label>
+      <label class="span-2">المتابعة والنتيجة
+        <textarea id="d_follow" rows="3" dir="auto" placeholder="ماذا تحقّق؟ متى تُراجع؟"></textarea></label>
+      <div class="form-actions span-2">
+        <button type="submit" class="btn btn-gold">💾 حفظ السجل</button>
+        <button type="button" class="btn btn-ghost" id="diffCancel">إلغاء</button>
+      </div>
+    </form>
+
+    <div class="list" id="diffList"></div>
+  </section>
+
+  <datalist id="studentsList"></datalist>
+
+</main>
+
+<footer class="app-footer no-print">
+  <p>كراسة المعلم الليبي الرقمية – رياضيات المرحلة الإعدادية · نسخة أولية (v1) تعمل محليًا في متصفحك.</p>
+  <p class="small">البيانات محفوظة في هذا المتصفح فقط — خذ نسخة احتياطية من وقت لآخر من <a href="#/basics">البيانات الأساسية</a>.</p>
+</footer>
+
+<!-- منطقة الطباعة: تظهر أثناء الطباعة فقط -->
+<div id="print-area" aria-hidden="true"></div>
+
+<div id="toast" class="toast no-print" role="status" aria-live="polite" hidden></div>
+
+<script src="js/store.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
